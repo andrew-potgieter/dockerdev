@@ -1,0 +1,6 @@
+:sp
+:NERDTree
+:wincmd l
+:wincmd j
+:terminal
+tmux
