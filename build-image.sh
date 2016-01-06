@@ -1,19 +1,19 @@
 #!/bin/bash
 
-cp -R ~/.m2 ./.m2
-cp ~/.vimrc ./.vimrc
-cp -R ~/.vim ./.vim
-cp ~/.tmux.conf ./.tmux.conf
-cp ~/.bashrc ./.bashrc
-cp ~/.bash_history ./.bash_history
-cp -R ~/.ssh ./.ssh
+mkdir target
+cp -r ~/.m2/ target/.m2
+cp ~/.vimrc target
+cp vim-init target
+cp -r ~/.vim/ target/.vim
+cp ~/.tmux.conf target
+cp -r ~/.ssh/ target/.ssh
+cp  ~/.zsh* target
+cp -r ~/.oh-my-zsh/ target/.oh-my-zsh
+cp -r ~/.lein target/.lein
+
+cp dev-docker-run-cmd.sh target
 
 docker build -t dockerdev:ap .
 
-rm -Rf .ssh
-rm -Rf .vim
-rm .vimrc
-rm .bash_history
-rm .bashrc
-rm .tmux.conf
+rm -Rf target
 
